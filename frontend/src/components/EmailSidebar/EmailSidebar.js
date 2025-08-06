@@ -38,18 +38,60 @@ export default function EmailSidebar({
   onSearchChange
 }) {
   return (
-    <Paper sx={{ height: '100%', borderRadius: 0 }}>
+    <Paper 
+      elevation={8}
+      sx={{ 
+        height: '100%', 
+        borderRadius: '20px 0 0 20px',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        overflow: 'hidden'
+      }}
+    >
       {/* Search Bar */}
-      <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider' }}>
+      <Box 
+        sx={{ 
+          p: 3, 
+          background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)',
+          borderRadius: '20px 0 0 0'
+        }}
+      >
         <TextField
           fullWidth
           placeholder="Search emails..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              borderRadius: 3,
+              backdropFilter: 'blur(10px)',
+              '& fieldset': {
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+                borderWidth: 2,
+              },
+              '&:hover fieldset': {
+                borderColor: 'rgba(255, 255, 255, 0.6)',
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: 'rgba(255, 255, 255, 0.9)',
+                borderWidth: 2,
+              },
+            },
+            '& .MuiInputBase-input': {
+              color: '#1e293b',
+              fontWeight: 500,
+              '&::placeholder': {
+                color: '#64748b',
+                opacity: 0.8,
+              },
+            },
+          }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon />
+                <SearchIcon sx={{ color: '#4f46e5', fontSize: 20 }} />
               </InputAdornment>
             ),
           }}

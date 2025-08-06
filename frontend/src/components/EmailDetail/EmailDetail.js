@@ -21,8 +21,18 @@ export default function EmailDetail({ email }) {
   const recipients = formatRecipients(email.to, email.cc, email.bcc);
 
   return (
-    <Paper sx={{ height: '100%', borderRadius: 0 }}>
-      <Box sx={{ p: 3, height: '100%', overflow: 'auto' }}>
+    <Paper 
+      elevation={8}
+      sx={{ 
+        height: '100%', 
+        borderRadius: '0 20px 20px 0',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        overflow: 'hidden'
+      }}
+    >
+      <Box sx={{ p: 4, height: '100%', overflow: 'auto' }}>
         {/* Email Header */}
         <EmailHeader email={email} recipients={recipients} />
         
@@ -39,7 +49,17 @@ export default function EmailDetail({ email }) {
  */
 function EmptyDetailView() {
   return (
-    <Paper sx={{ height: '100%', borderRadius: 0 }}>
+    <Paper 
+      elevation={8}
+      sx={{ 
+        height: '100%', 
+        borderRadius: '0 20px 20px 0',
+        background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        overflow: 'hidden'
+      }}
+    >
       <Box sx={{ 
         height: '100%', 
         display: 'flex', 

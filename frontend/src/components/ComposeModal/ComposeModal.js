@@ -70,7 +70,14 @@ export default function ComposeModal({ open, loading, onClose, onSend }) {
       maxWidth="md"
       fullWidth
       PaperProps={{
-        sx: { minHeight: '600px' }
+        sx: { 
+          minHeight: '600px',
+          borderRadius: 4,
+          background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+        }
       }}
     >
       <DialogTitle>

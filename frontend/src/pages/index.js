@@ -55,8 +55,29 @@ export default function Home() {
   };
 
   return (
-    <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Grid container sx={{ flex: 1, height: '100%' }}>
+    <Box 
+      sx={{ 
+        height: '100vh', 
+        display: 'flex', 
+        flexDirection: 'column',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        position: 'relative'
+      }}
+    >
+      {/* Background Pattern */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)',
+          backgroundSize: '20px 20px',
+          pointerEvents: 'none'
+        }}
+      />
+      <Grid container sx={{ flex: 1, height: '100%', position: 'relative', zIndex: 1 }}>
         {/* Email Sidebar */}
         <Grid item xs={4} sx={{ borderRight: 1, borderColor: 'divider', height: '100%' }}>
           <EmailSidebar
@@ -78,14 +99,27 @@ export default function Home() {
 
       {/* Floating Action Button for Compose */}
       <Fab
-        color="primary"
         aria-label="compose"
         onClick={handleComposeOpen}
         sx={{
           position: 'fixed',
-          bottom: 24,
-          right: 24,
+          bottom: 32,
+          right: 32,
           zIndex: 1000,
+          background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+          color: 'white',
+          width: 64,
+          height: 64,
+          boxShadow: '0 8px 32px rgba(240, 147, 251, 0.4)',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          '&:hover': {
+            background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+            transform: 'translateY(-4px) scale(1.05)',
+            boxShadow: '0 12px 40px rgba(240, 147, 251, 0.6)',
+          },
+          '&:active': {
+            transform: 'translateY(-2px) scale(1.02)',
+          }
         }}
       >
         <EditIcon />
